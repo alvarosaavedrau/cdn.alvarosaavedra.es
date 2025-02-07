@@ -8,7 +8,6 @@ resource "aws_cloudfront_origin_access_control" "s3CDN" {
 resource "aws_cloudfront_distribution" "s3CDN" {
   enabled             = true
   aliases             = [aws_s3_bucket.s3.bucket]
-  default_root_object = "index.html"
 
   default_cache_behavior {
     allowed_methods        = ["GET", "HEAD", "OPTIONS"]
